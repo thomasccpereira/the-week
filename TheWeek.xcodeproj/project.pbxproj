@@ -21,6 +21,7 @@
 		120178E72C025F2F00F043BF /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120178E62C025F2F00F043BF /* Date+.swift */; };
 		120178E92C02610F00F043BF /* KeyPath+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120178E82C02610F00F043BF /* KeyPath+.swift */; };
 		120178EB2C02643E00F043BF /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120178EA2C02643E00F043BF /* Array+.swift */; };
+		12B24BBC2C036D2200B399DA /* UIScreen+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B24BBB2C036D2200B399DA /* UIScreen+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		120178E62C025F2F00F043BF /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		120178E82C02610F00F043BF /* KeyPath+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyPath+.swift"; sourceTree = "<group>"; };
 		120178EA2C02643E00F043BF /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
+		12B24BBB2C036D2200B399DA /* UIScreen+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 				120178E62C025F2F00F043BF /* Date+.swift */,
 				120178EA2C02643E00F043BF /* Array+.swift */,
 				120178E82C02610F00F043BF /* KeyPath+.swift */,
+				12B24BBB2C036D2200B399DA /* UIScreen+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				120178E92C02610F00F043BF /* KeyPath+.swift in Sources */,
 				120178DC2C0257D300F043BF /* RootViewModel.swift in Sources */,
 				120178EB2C02643E00F043BF /* Array+.swift in Sources */,
+				12B24BBC2C036D2200B399DA /* UIScreen+.swift in Sources */,
 				120178D72C02574F00F043BF /* RootCoordinator.swift in Sources */,
 				120178E52C0259E700F043BF /* InfinitePageView.swift in Sources */,
 				120178A72C02459D00F043BF /* TheWeekApp.swift in Sources */,
