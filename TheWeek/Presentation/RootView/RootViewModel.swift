@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 
 class RootViewModel: ObservableObject, Identifiable {
    private unowned let coordinator: RootCoordinator
@@ -11,25 +12,18 @@ class RootViewModel: ObservableObject, Identifiable {
    }
    
    func moveBackward() {
-      if weekdayIndex == 0 {
-         weekdayIndex = weekdays.lastIndex
-         return
-      }
-      weekdayIndex -= 1
+      withAnimation { weekdayIndex -= 1 }
    }
    
    func moveForward() {
-      if weekdayIndex == weekdays.lastIndex {
-         weekdayIndex = 0
-         return
-      }
-      weekdayIndex += 1
+      withAnimation { weekdayIndex += 1 }
    }
-   
-   func correctedIndex(for index: Int) -> Int {
-      let count = weekdays.count
-      return (count + index) % count
-   }
+}
+
+// MARK: - Layout
+extension RootViewModel {
+   var isBackwardButtonDisabled: Bool { weekdayIndex == 0 }
+   var isForwardButtonDisabled: Bool { weekdayIndex == weekdays.lastIndex }
 }
 
 // MARK: - Preview

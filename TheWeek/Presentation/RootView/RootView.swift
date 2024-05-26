@@ -4,14 +4,48 @@ struct RootView: View {
    @ObservedObject private(set) var viewModel: RootViewModel
    
    var body: some View {
-      InfinitePageView(
-         selection: $viewModel.weekdayIndex,
-         before: { viewModel.correctedIndex(for: $0 - 1) },
-         view: { index in
-            Text(viewModel.weekdays[index])
-               .font(.system(size: 48, weight: .heavy))
-         }, after: { viewModel.correctedIndex(for: $0 + 1) }
-      )
+      NavigationStack {
+         TabView(selection: $viewModel.weekdayIndex) {
+            weekdaysView
+         }
+         .tabViewStyle(.page(indexDisplayMode: .never))
+         .toolbar {
+            leftBarButtonItems
+            rightBarButtonItems
+         }
+      }
+   }
+   
+   @ToolbarContentBuilder
+   private var leftBarButtonItems: some ToolbarContent {
+      ToolbarItem(placement: .topBarLeading) {
+         Button {
+            viewModel.moveBackward()
+         } label: {
+            Image(systemName: "chevron.left")
+         }
+         .disabled(viewModel.isBackwardButtonDisabled)
+      }
+   }
+   
+   @ToolbarContentBuilder
+   private var rightBarButtonItems: some ToolbarContent {
+      ToolbarItem(placement: .topBarTrailing) {
+         Button {
+            viewModel.moveForward()
+         } label: {
+            Image(systemName: "chevron.right")
+         }
+         .disabled(viewModel.isForwardButtonDisabled)
+      }
+   }
+   
+   @ViewBuilder
+   private var weekdaysView: some View {
+      ForEach(Array(viewModel.weekdays.enumerated()), id: \.element) { index, weekday in
+         Text(weekday)
+            .tag(index)
+      }
    }
 }
 
