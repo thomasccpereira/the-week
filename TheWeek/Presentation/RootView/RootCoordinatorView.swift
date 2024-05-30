@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct RootCoordinatorView: View {
-   @ObservedObject var coordinator: RootCoordinator
+   @ObservedObject private(set) var coordinator: RootCoordinator
    
    var body: some View {
       RootView(viewModel: coordinator.rootViewModel)
