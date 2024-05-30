@@ -43,15 +43,14 @@ struct RootView: View {
    @ViewBuilder
    private var weekdaysView: some View {
       ForEach(Array(viewModel.weekdays.enumerated()), id: \.element) { index, weekday in
-         Text(weekday)
+         let viewModel = WeekdayViewModel(weekday: weekday)
+         WeekdayView(viewModel: viewModel)
             .tag(index)
       }
    }
 }
 
 // MARK: - Preview
-#if DEBUG
 #Preview {
    RootView(viewModel: RootViewModel.preview)
 }
-#endif

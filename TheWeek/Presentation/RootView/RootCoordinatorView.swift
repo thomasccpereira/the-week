@@ -9,7 +9,7 @@ struct RootCoordinatorView: View {
 }
 
 // MARK: - Preview
-#if DEBUG
+#if DEBUG && !TESTING
 #Preview {
    RootCoordinatorView(coordinator: RootCoordinator.preview)
 }

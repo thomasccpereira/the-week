@@ -9,7 +9,7 @@ class RootCoordinator: ObservableObject, Identifiable {
 }
 
 // MARK: - Preview
-#if DEBUG
+#if DEBUG && !TESTING
 extension RootCoordinator {
     static var preview: Self {
         .init()

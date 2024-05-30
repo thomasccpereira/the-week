@@ -21,6 +21,8 @@
 		120178E92C02610F00F043BF /* KeyPath+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120178E82C02610F00F043BF /* KeyPath+.swift */; };
 		120178EB2C02643E00F043BF /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120178EA2C02643E00F043BF /* Array+.swift */; };
 		12B24BBC2C036D2200B399DA /* UIScreen+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B24BBB2C036D2200B399DA /* UIScreen+.swift */; };
+		12BDB6F02C088CC100A2679A /* WeekdayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BDB6EF2C088CC100A2679A /* WeekdayViewModel.swift */; };
+		12BDB6F22C088CC800A2679A /* WeekdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BDB6F12C088CC800A2679A /* WeekdayView.swift */; };
 		12BDB6F52C088D1C00A2679A /* WeekdayHourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BDB6F42C088D1C00A2679A /* WeekdayHourView.swift */; };
 		12BDB6F72C088D2F00A2679A /* WeekdayQuarterOfHourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BDB6F62C088D2F00A2679A /* WeekdayQuarterOfHourView.swift */; };
 		12BDB6F92C08901F00A2679A /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BDB6F82C08901F00A2679A /* Color+.swift */; };
@@ -65,6 +67,8 @@
 		120178E82C02610F00F043BF /* KeyPath+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyPath+.swift"; sourceTree = "<group>"; };
 		120178EA2C02643E00F043BF /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
 		12B24BBB2C036D2200B399DA /* UIScreen+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+.swift"; sourceTree = "<group>"; };
+		12BDB6EF2C088CC100A2679A /* WeekdayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayViewModel.swift; sourceTree = "<group>"; };
+		12BDB6F12C088CC800A2679A /* WeekdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayView.swift; sourceTree = "<group>"; };
 		12BDB6F42C088D1C00A2679A /* WeekdayHourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayHourView.swift; sourceTree = "<group>"; };
 		12BDB6F62C088D2F00A2679A /* WeekdayQuarterOfHourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayQuarterOfHourView.swift; sourceTree = "<group>"; };
 		12BDB6F82C08901F00A2679A /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
@@ -213,12 +217,12 @@
 		120178E22C0259AD00F043BF /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				120178E62C025F2F00F043BF /* Date+.swift */,
 				120178EA2C02643E00F043BF /* Array+.swift */,
+				12BDB6F82C08901F00A2679A /* Color+.swift */,
+				120178E62C025F2F00F043BF /* Date+.swift */,
+				12BDB6FA2C0899A700A2679A /* Font+.swift */,
 				120178E82C02610F00F043BF /* KeyPath+.swift */,
 				12B24BBB2C036D2200B399DA /* UIScreen+.swift */,
-				12BDB6F82C08901F00A2679A /* Color+.swift */,
-				12BDB6FA2C0899A700A2679A /* Font+.swift */,
 				12BDB7002C08A39900A2679A /* View+.swift */,
 			);
 			path = Extension;
@@ -227,6 +231,8 @@
 		12BDB6EA2C088C7800A2679A /* WeekdayView */ = {
 			isa = PBXGroup;
 			children = (
+				12BDB6EF2C088CC100A2679A /* WeekdayViewModel.swift */,
+				12BDB6F12C088CC800A2679A /* WeekdayView.swift */,
 				12BDB6F32C088D0600A2679A /* Components */,
 			);
 			path = WeekdayView;
@@ -376,6 +382,7 @@
 				120178E72C025F2F00F043BF /* Date+.swift in Sources */,
 				12BDB6F92C08901F00A2679A /* Color+.swift in Sources */,
 				120178DA2C0257BC00F043BF /* RootCoordinatorView.swift in Sources */,
+				12BDB6F22C088CC800A2679A /* WeekdayView.swift in Sources */,
 				120178E92C02610F00F043BF /* KeyPath+.swift in Sources */,
 				12BDB6F72C088D2F00A2679A /* WeekdayQuarterOfHourView.swift in Sources */,
 				12BDB7012C08A39900A2679A /* View+.swift in Sources */,
@@ -387,6 +394,7 @@
 				120178D72C02574F00F043BF /* RootCoordinator.swift in Sources */,
 				120178A72C02459D00F043BF /* TheWeekApp.swift in Sources */,
 				120178DE2C02590500F043BF /* RootView.swift in Sources */,
+				12BDB6F02C088CC100A2679A /* WeekdayViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,6 +602,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.thomas-pereira.TheWeek";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = PROD;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -676,6 +685,137 @@
 			};
 			name = Release;
 		};
+		12BDB7022C08DF0B00A2679A /* Testing */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Testing;
+		};
+		12BDB7032C08DF0B00A2679A /* Testing */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TheWeek/Resources/Preview Content\"";
+				DEVELOPMENT_TEAM = 6NW28QCL54;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.thomas-pereira.TheWeek";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = TESTING;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Testing;
+		};
+		12BDB7042C08DF0B00A2679A /* Testing */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6NW28QCL54;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.thomas-pereira.TheWeekTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TheWeek.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TheWeek";
+			};
+			name = Testing;
+		};
+		12BDB7052C08DF0B00A2679A /* Testing */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6NW28QCL54;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.thomas-pereira.TheWeekUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TheWeek;
+			};
+			name = Testing;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -683,6 +823,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				120178C72C02459F00F043BF /* Debug */,
+				12BDB7022C08DF0B00A2679A /* Testing */,
 				120178C82C02459F00F043BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -692,6 +833,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				120178CA2C02459F00F043BF /* Debug */,
+				12BDB7032C08DF0B00A2679A /* Testing */,
 				120178CB2C02459F00F043BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -701,6 +843,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				120178CD2C02459F00F043BF /* Debug */,
+				12BDB7042C08DF0B00A2679A /* Testing */,
 				120178CE2C02459F00F043BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -710,6 +853,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				120178D02C02459F00F043BF /* Debug */,
+				12BDB7052C08DF0B00A2679A /* Testing */,
 				120178D12C02459F00F043BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;

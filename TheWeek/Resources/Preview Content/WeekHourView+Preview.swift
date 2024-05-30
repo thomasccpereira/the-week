@@ -2,6 +2,15 @@ import Foundation
 import SwiftUI
 
 extension Collection where Element == WeekdayHourView.DataToDisplay {
+   static var defaultQuarters: [WeekdayHourView.DataToDisplay] {
+      [
+         .init(quarter: .first),
+         .init(quarter: .second),
+         .init(quarter: .third),
+         .init(quarter: .last)
+      ]
+   }
+   
    static var previewFirstQuarter: [WeekdayHourView.DataToDisplay] {
       [
          .init(quarter: .first, backgroundColor: .orange),
