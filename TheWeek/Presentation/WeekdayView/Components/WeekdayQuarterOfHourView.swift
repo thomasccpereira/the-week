@@ -1,12 +1,14 @@
 import Foundation
 import SwiftUI
 
+typealias QuarterOfHour = WeekdayQuarterOfHourView.QuarterOfHour
+
 struct WeekdayQuarterOfHourView: View {
    enum QuarterOfHour: Int {
-      case `first` = 0
-      case second = 15
-      case third = 30
-      case `last` = 45
+      case `first` = 15
+      case second = 30
+      case third = 45
+      case `last` = 60
       
       var text: String { "\(self.rawValue)" }
       
@@ -20,35 +22,33 @@ struct WeekdayQuarterOfHourView: View {
       }
    }
    
-   private let quarter: QuarterOfHour
-   private let backgroundColor: Color
-   
-   init(quarter: QuarterOfHour, backgroundColor: Color? = nil) {
-      self.quarter = quarter
-      self.backgroundColor = backgroundColor ?? quarter.backgroundColor
+   let quarter: QuarterOfHour
+   private(set) var appointmentText: String? = nil
+   private(set) var backgroundColor: Color? = nil
+   private var defaultBackgroundColor: Color {
+      backgroundColor ?? quarter.backgroundColor
    }
    
    var body: some View {
-      VStack(spacing: 0) {
+      HStack(spacing: 8) {
          Text(quarter.text)
             .font(.bold12)
-            .foregroundStyle(backgroundColor.opositeText)
-            .frame(height: 20)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.horizontal, 8)
-            .background(backgroundColor)
+            .foregroundStyle(defaultBackgroundColor.opositeText)
+            .padding(.leading, 8)
          
-         separatorView
+         appointmentTextView
       }
+      .frame(height: 20)
+      .frame(maxWidth: .infinity, alignment: .leading)
+      .background(defaultBackgroundColor)
    }
    
    @ViewBuilder
-   private var separatorView: some View {
-      if quarter == .last {
-         Rectangle()
-            .fill(backgroundColor.opositeSeparator)
-            .frame(height: 2)
-            .frame(maxWidth: .infinity)
+   private var appointmentTextView: some View {
+      if let appointmentText {
+         Text(appointmentText)
+            .font(.bold14)
+            .foregroundStyle(Color.defaultTextColor)
       }
    }
 }
@@ -63,7 +63,7 @@ struct WeekdayQuarterOfHourView: View {
       }
       
       VStack(spacing: 0) {
-         WeekdayQuarterOfHourView(quarter: .first, backgroundColor: .orange)
+         WeekdayQuarterOfHourView(quarter: .first, appointmentText: "Dentista", backgroundColor: .orange)
          WeekdayQuarterOfHourView(quarter: .second, backgroundColor: .orange)
          WeekdayQuarterOfHourView(quarter: .third)
          WeekdayQuarterOfHourView(quarter: .last)
@@ -72,7 +72,7 @@ struct WeekdayQuarterOfHourView: View {
       VStack(spacing: 0) {
          WeekdayQuarterOfHourView(quarter: .first)
          WeekdayQuarterOfHourView(quarter: .second)
-         WeekdayQuarterOfHourView(quarter: .third, backgroundColor: .red)
+         WeekdayQuarterOfHourView(quarter: .third, appointmentText: "Supermercado", backgroundColor: .red)
          WeekdayQuarterOfHourView(quarter: .last, backgroundColor: .red)
       }
    }
