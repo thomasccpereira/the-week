@@ -11,9 +11,16 @@ extension Color {
 
 extension Color {
    private var isDarkModeEnabled: Bool { UITraitCollection.current.userInterfaceStyle == .dark }
-   var opositeSeparator: Color { isDarkModeEnabled ? self.lighter : self.darker }
-   var lighter: Color { Color(UIColor(self).mix(with: .white, amount: 0.5)) }
-   var darker: Color { Color(UIColor(self).mix(with: .black, amount: 0.2)) }
+   var opositeText: Color { isDarkModeEnabled ? self.lighter(0.7) : self.darker(0.4) }
+   var opositeSeparator: Color { isDarkModeEnabled ? self.lighter() : self.darker() }
+   
+   private func lighter(_ amount: CGFloat = 0.5) -> Color {
+      Color(UIColor(self).mix(with: .white, amount: amount))
+   }
+   
+   private func darker(_ amount: CGFloat = 0.2) -> Color {
+      Color(UIColor(self).mix(with: .black, amount: amount))
+   }
 }
 
 extension UIColor {
