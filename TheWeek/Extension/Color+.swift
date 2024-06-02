@@ -4,6 +4,7 @@ extension Color {
    // Common
    static let lightGray = Color(.systemGray6)
    static let defaultTextColor = Color("colours/defaultTextColor")
+   static let grayTextColor = Color("colours/grayTextColor")
    // WeekdayHour
    // WeekdayQuarterOfHour
    static let firstQuarterOfHour = Color("colours/quartersOfHour/first")

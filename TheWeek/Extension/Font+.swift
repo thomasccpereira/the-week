@@ -30,6 +30,8 @@ extension Font {
    static let bold16 = Font.system(size: 16, weight: .bold)
    static let bold18 = Font.system(size: 18, weight: .bold)
    static let bold20 = Font.system(size: 20, weight: .bold)
+   static let bold24 = Font.system(size: 24, weight: .bold)
+   static let bold32 = Font.system(size: 32, weight: .bold)
    // Heavy
    static let heavy10 = Font.system(size: 10, weight: .heavy)
    static let heavy12 = Font.system(size: 12, weight: .heavy)
