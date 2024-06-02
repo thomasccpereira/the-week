@@ -9,36 +9,38 @@ struct WeekdayView: View {
             .toolbar {
                ToolbarItem(placement: .principal) {
                   Text(viewModel.weekdayTitle)
-                     .font(.bold16)
-                     .foregroundStyle(Color.defaultTextColor.opositeText)
+                     .font(.bold32)
+                     .foregroundStyle(Color.defaultTextColor)
+                     .frame(maxWidth: .infinity, alignment: .leading)
                }
-            }
-            .onAppear {
-               proxy.scrollTo(viewModel.indexOfNow)
             }
       }
    }
    
    @ViewBuilder
    private func hoursListView(_ proxy: ScrollViewProxy) -> some View {
-      List(selection: $viewModel.selectedHour) {
-         hourOfDayView(proxy)
+      List {
+         ForEach(Array(viewModel.hoursOfDay.enumerated()), id: \.element) { index, hour in
+            hourOfDayView(hour)
+               .id(index)
+         }
+         .onAppear {
+            proxy.scrollTo(viewModel.indexOfNow, anchor: .top)
+         }
       }
       .listStyle(.plain)
    }
+   
    @ViewBuilder
-   private func hourOfDayView(_ proxy: ScrollViewProxy) -> some View {
-      ForEach(Array(viewModel.hoursOfDay.enumerated()), id: \.element) { index, hour in
-         VStack(spacing: 0) {
-            WeekdayHourView(hourText: hour.hourString, quarters: .defaultQuarters)
-            
-            Divider()
-               .frame(height: 1)
-         }
-         .listRowSeparator(.hidden)
-         .listRowInsets(EdgeInsets())
-         .tag(index)
+   private func hourOfDayView(_ hour: Date) -> some View {
+      VStack(spacing: 0) {
+         WeekdayHourView(hourText: hour.hourString, quarters: .defaultQuarters)
+         
+         Divider()
+            .frame(height: 1)
       }
+      .listRowSeparator(.hidden)
+      .listRowInsets(EdgeInsets())
    }
 }
 
